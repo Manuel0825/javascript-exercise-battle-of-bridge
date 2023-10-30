@@ -5,7 +5,13 @@ class Player {
         this.attack = attack;
     }
     attackPlayer(player, diceValue){
-        Player.life -= this.diceValue * 6;
+        if (this.isDead()) {
+            return;
+          }
+         else  player.life -= this.attack * diceValue;
+
+    
+        
     }
     isDead (){
         return this.life <=0;
